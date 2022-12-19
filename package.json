@@ -6,6 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "start:demon": "webpack --config webpack.config.js --watch",
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -22,11 +23,24 @@
   },
   "dependencies": {
     "@nestjs/common": "^7.5.1",
+    "@nestjs/config": "^1.0.1",
     "@nestjs/core": "^7.5.1",
+    "@nestjs/jwt": "^8.0.0",
+    "@nestjs/mapped-types": "^1.0.0",
+    "@nestjs/mongoose": "^8.0.1",
+    "@nestjs/passport": "^8.0.1",
     "@nestjs/platform-express": "^7.5.1",
     "@nestjs/swagger": "^4.7.9",
+    "bcrypt": "^5.0.1",
     "class-transformer": "^0.3.1",
     "class-validator": "^0.12.2",
+    "eslint-plugin-nestjs": "^1.2.3",
+    "helmet": "^4.6.0",
+    "husky": "^7.0.2",
+    "mongoose": "^6.8.1",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.3",
@@ -47,12 +61,22 @@
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.6.3",
     "prettier": "^2.1.2",
+    "run-script-webpack-plugin": "^0.0.11",
     "supertest": "^6.0.0",
     "ts-jest": "^26.4.3",
-    "ts-loader": "^8.0.8",
+    "ts-loader": "^8.3.0",
     "ts-node": "^9.0.0",
     "tsconfig-paths": "^3.9.0",
-    "typescript": "^4.0.5"
+    "typescript": "^4.0.5",
+    "webpack": "^5.52.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "eslint . --max-warnings=0"
+    }
   },
   "jest": {
     "moduleFileExtensions": [
