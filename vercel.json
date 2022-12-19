@@ -1,5 +1,3 @@
 {
-  "source": "/feedback/(?!general)",
-  "destination": "/api/feedback/general",
   "cleanUrls": true
 }
