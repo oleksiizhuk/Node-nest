@@ -13,6 +13,7 @@ import { ConfigModule } from "@nestjs/config";
     ConfigModule.forRoot(),
     MongooseModule.forRoot(
       "mongodb+srv://oleksii:223132qq@cluster0.bzoaa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+      // "mongodb+srv://oleksii:223132qq@cluster0.bzoaa.mongodb.net/?retryWrites=true&w=majority",
       { autoCreate: true }
     ),
   ],

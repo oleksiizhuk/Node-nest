@@ -19,7 +19,7 @@ export class UserRepository {
   }
 
   async getUserById(id: string): Promise<IUser> {
-    return this.UserDB.findById(Types.ObjectId(id));
+    return this.UserDB.findById(id);
   }
 
   async getUserByEmail(email: string): Promise<IUser> {
@@ -27,12 +27,12 @@ export class UserRepository {
   }
 
   async update(id: string, user: UserDto): Promise<IUser> {
-    return this.UserDB.findByIdAndUpdate(Types.ObjectId(id), user, {
+    return this.UserDB.findByIdAndUpdate(id, user, {
       new: true,
     });
   }
 
   async delete(id: string): Promise<IUser> {
-    return this.UserDB.findByIdAndRemove(Types.ObjectId(id));
+    return this.UserDB.findByIdAndRemove(id);
   }
 }
